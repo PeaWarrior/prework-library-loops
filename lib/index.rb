@@ -44,4 +44,15 @@ def all_genres(library)
   end
   p genres_array
 end
-all_genres(library)
+
+def all_pages_read (library)
+  pages_read = 0
+  library.each do |book_hash|
+    if book_hash[:completed]
+      pages_read += book_hash[:pages]
+    end
+  end
+  p pages_read
+end
+
+all_pages_read(library)
