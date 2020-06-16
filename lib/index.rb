@@ -31,6 +31,17 @@ end
 
 # WRITE CODE ABOVE HERE
 
-all_pages(library)
+def all_genres(library)
+  genres_array = []
 
-puts "Books!"
+  library.each do |book_hash|
+    book_hash[:genres].each do|genre|
+      
+      if !genres_array.include?(genre)
+        genres_array << genre
+      end
+    end
+  end
+  p genres_array
+end
+all_genres(library)
