@@ -18,12 +18,19 @@ library = [
 
 # WRITE CODE BELOW HERE
 
+def all_pages(library)
+  pages_array = []
+  
+  library.each do |book_hash|
+    pages_array << book_hash[:pages]
+  end
+  p pages_array.reduce(:+)
 
+end
 
 
 # WRITE CODE ABOVE HERE
 
-
-binding.pry
+all_pages(library)
 
 puts "Books!"
